@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Show several users
+      ansible.builtin.debug:
+        msg: "{{ item.name }} {{ item.groups }}"
+      loop:
+        - { name: user01, groups: wheel }
+        - { name: user02, groups: admin }

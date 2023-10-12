@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  tasks:
+    - block:
+        - name: Failed task
+          ansible.builtin.command:
+            cmd: /bin/false
+        - name: Not executed task
+          ansible.builtin.debug:
+            msg: 'Not executed because of above error'
+      rescue:
+        - name: Debug message
+          ansible.builtin.debug:
+            msg: 'エラーが発生しました'
+        - name: Failed task
+          ansible.builtin.command:
+            cmd: /bin/false
+        - name: Not executed task
+          ansible.builtin.debug:
+            msg: 'Not executed because of above error'
+      always:
+        - name: Debug message
+          ansible.builtin.debug:
+            msg: 'いつも実行されます'

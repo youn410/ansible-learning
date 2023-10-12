@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  tasks:
+    - block:
+      - name: Hoge
+        ansible.builtin.debug:
+          msg: "hoge"
+      - name: Foge
+        ansible.builtin.debug:
+          msg: "foge"
+      when: ansible_os_family == 'RedHat'
+    - block:
+      - name: Piyo
+        ansible.builtin.debug:
+          msg: "piyo"
+      - name: Ora
+        ansible.builtin.debug:
+          msg: "ora"
+      when: ansible_os_family == 'Debian'

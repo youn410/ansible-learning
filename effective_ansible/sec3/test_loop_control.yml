@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Count database
+      ansible.builtin.debug:
+        msg: "{{ item }} with index {{ mysql_idx }}"
+      loop:
+        - name: server-a
+          cpu: 2core
+          disks: 5Gb
+          ram: 15Gb
+        - name: server-b
+          cpu: 4core
+          disks: 5Gb
+          ram: 20Gb
+        - name: server-c
+          cpu: 8core
+          disks: 10Gb
+          ram: 5Gb
+      loop_control:
+        index_var: mysql_idx
+        pause: 2
+        label: "{{ item.name }}"

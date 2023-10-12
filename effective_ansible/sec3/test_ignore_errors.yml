@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Ignore failure task
+      ansible.builtin.command:
+        cmd: /bin/false
+      ignore_errors: true
