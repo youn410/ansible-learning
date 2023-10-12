@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Get Kernel information
+      ansible.builtin.command:
+        cmd: uname -r
+      register: result
+    - name: Debug registered variable
+      ansible.builtin.debug:
+        var: result

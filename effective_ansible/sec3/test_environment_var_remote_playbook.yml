@@ -1,0 +1,6 @@
+---
+- hosts: test_servers
+  tasks:
+    - name: Display remote HOME environment variable
+      ansible.builtin.debug:
+        msg: "'{{ ansible_facts.env.HOME }}' is the remote HOME environment variable."

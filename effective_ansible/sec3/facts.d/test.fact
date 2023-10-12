@@ -1,0 +1,3 @@
+[default]
+hardware = x86_84
+network = ens160

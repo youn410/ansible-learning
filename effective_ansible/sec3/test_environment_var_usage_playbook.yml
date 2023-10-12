@@ -1,0 +1,11 @@
+---
+- hosts: test_servers
+  environment:
+    http_proxy: http://proxy.example.localhost:8080
+    https_proxy: http://proxy.example.localhost:8080
+  tasks:
+    - name: Display remote http_proxy / https_proxy environment variables
+      ansible.builtin.debug:
+        msg:
+        - "'{{ ansible_facts.env.http_proxy }}' is the remote http_proxy environment variable."
+        - "'{{ ansible_facts.env.https_proxy }}' is the remote https_proxy environment variable."

@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Debug IP address
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts.default_ipv4.address }}"
+

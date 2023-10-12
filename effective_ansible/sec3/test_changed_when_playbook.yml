@@ -1,0 +1,13 @@
+---
+- hosts: test_servers
+  tasks:
+    - name: Control status by failed_when
+      ansible.builtin.command:
+        cmd: mkdir /tmp
+      register: failed_result
+      failed_when: failed_result.stderr == ""
+    - name: Control status by changed_when (ok)
+      ansible.builtin.command:
+        cmd: which python
+      register: changed_result
+      changed_when: changed_result.rc != 0 # 0 means success
