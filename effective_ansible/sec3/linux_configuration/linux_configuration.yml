@@ -1,0 +1,8 @@
+---
+- name: Initialize OS setting for Linux Servers
+  hosts: linux_servers
+  become: true
+
+  tasks:
+    - ansible.builtin.import_role: name=common/hostname
+      tags: hostname
