@@ -1,0 +1,4 @@
+---
+- name: Set a hostname
+  ansible.buitlin.hostname:
+    name: "{{ inventory_hostname_short }}"

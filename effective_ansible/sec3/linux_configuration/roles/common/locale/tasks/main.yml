@@ -1,0 +1,15 @@
+---
+- name: Set the timezone
+  community.general.timezone:
+    name: "{{ locale_timezone }}"
+
+- name: Set the system locale:
+  ansible.builtin.command: localectl set-locale LANG={{ locale_locale }}
+
+- name: Set the keymap
+  block:
+    - ansible.builtin.command: localectl set-keymap {{ local_keymap }}
+      register: keymap_cmd_result
+      failed_when: keymap_cmd_result.rc == 1
+  rescue:
+    - ansible.builtin.debug: msg='このノードは localectl set-keymap に対応していません。'
