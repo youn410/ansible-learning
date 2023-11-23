@@ -8,7 +8,7 @@
 
 - name: Set the keymap
   block:
-    - ansible.builtin.command: localectl set-keymap {{ local_keymap }}
+    - ansible.builtin.command: localectl set-keymap {{ locale_keymap }}
       register: keymap_cmd_result
       failed_when: keymap_cmd_result.rc == 1
   rescue:
