@@ -3,7 +3,7 @@
   community.general.timezone:
     name: "{{ locale_timezone }}"
 
-- name: Set the system locale:
+- name: Set the system locale
   ansible.builtin.command: localectl set-locale LANG={{ locale_locale }}
 
 - name: Set the keymap
