@@ -6,3 +6,5 @@
   tasks:
     - ansible.builtin.import_role: name=common/hostname
       tags: hostname
+    - ansible.builtin.import_role: name=common/locale
+      tags: locale
