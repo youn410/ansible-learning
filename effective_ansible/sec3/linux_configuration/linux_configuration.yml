@@ -10,3 +10,13 @@
       tags: locale
     - ansible.builtin.import_role: name=common/packages
       tags: packages
+    - ansible.builtin.import_role: name=common/users
+      tags: users
+
+  post_tasks:
+    - name: Restart target nodes
+      ansible.builtin.reboot:
+    - name: Waiting connection
+      ansible.builtin.wait_for_connection:
+        delay: 5
+        timeout: 60
