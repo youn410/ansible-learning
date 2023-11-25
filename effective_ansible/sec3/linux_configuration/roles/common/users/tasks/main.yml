@@ -11,7 +11,7 @@
     comment: "{{ item.value.comment }}"
     groups: "{{ item.value.groups }}"
     shell: /bin/bash
-    home: "home/{{ item.key }}"
+    home: "/home/{{ item.key }}"
     state: present
   loop: "{{ new_users | dict2items }}"
 
