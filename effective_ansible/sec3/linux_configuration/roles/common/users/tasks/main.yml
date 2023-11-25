@@ -8,7 +8,7 @@
   ansible.builtin.user:
     name: "{{ item.key }}"
     password: "{{ item.value.initial_password}}"
-    comment: "{{ item.comment }}"
+    comment: "{{ item.value.comment }}"
     groups: "{{ item.value.groups }}"
     shell: /bin/bash
     home: "home/{{ item.key }}"
