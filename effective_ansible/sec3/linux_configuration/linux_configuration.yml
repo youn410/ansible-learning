@@ -8,3 +8,5 @@
       tags: hostname
     - ansible.builtin.import_role: name=common/locale
       tags: locale
+    - ansible.builtin.import_role: name=common/packages
+      tags: packages
