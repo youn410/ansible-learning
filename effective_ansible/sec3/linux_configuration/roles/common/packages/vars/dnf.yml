@@ -1,0 +1,9 @@
+---
+required_packages:
+  - "epel-release"
+  - "@Development Tools"
+  - "cowsay"
+  - "figlet"
+  - "fastfetch"
+  - "vim"
+  - "*"
