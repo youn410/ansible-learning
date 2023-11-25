@@ -30,7 +30,7 @@ new_users:
     priv: operator
 
   alice:
-    comment: "Normal user: alice"
+    comment: "Normal user alice"
     initial_password: "{{ 'P@s$w0rd' | password_hash('sha256') }}"
     groups:
       - users
@@ -39,7 +39,7 @@ new_users:
     add_sudoers: false
 
   bob:
-    comment: "Normal user: bob"
+    comment: "Normal user bob"
     initial_password: "{{ 'P@s$w0rd' | password_hash('sha256') }}"
     groups:
       - users
@@ -49,7 +49,7 @@ new_users:
     priv: user
 
   carol:
-    comment: "Normal user: carol"
+    comment: "Normal user carol"
     initial_password: "{{ 'P@s$w0rd' | password_hash('sha256') }}"
     groups:
       - users
