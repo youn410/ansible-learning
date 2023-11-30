@@ -1,7 +1,7 @@
 ---
 - name: Deploy Node Exporter for the monitoring system
   hosts: nodeexporter
-  become: true
+    # become: true
   tasks:
     - ansible.builtin.import_role:
         name: common
@@ -13,7 +13,7 @@
 
 - name: Deploy Prometheus for the monitoring system
   hosts: prometheus
-  become: true
+    # become: true
   tasks:
     - ansible.builtin.import_role:
         name: common
@@ -25,7 +25,7 @@
 
 - name: Deploy Grafana for the monitoring system
   hosts: grafana
-  become: true
+    # become: true
   tasks:
     - ansible.builtin.import_role:
         name: common
