@@ -3,7 +3,7 @@
   hosts: nodeexporter
   become: true
   tasks:
-    - ansible.buitlin.import_role:
+    - ansible.builtin.import_role:
         name: common
       tags: common
 
@@ -15,7 +15,7 @@
   hosts: prometheus
   become: true
   tasks:
-    - ansible.buitlin.import_role:
+    - ansible.builtin.import_role:
         name: common
       tags: common
 
@@ -27,7 +27,7 @@
   hosts: grafana
   become: true
   tasks:
-    - ansible.buitlin.import_role:
+    - ansible.builtin.import_role:
         name: common
       tags: common
 
