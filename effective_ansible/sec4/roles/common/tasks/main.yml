@@ -1,0 +1,11 @@
+---
+- name: configure / Update dnf packages
+  ansible.builtin.dnf:
+    name: '*'
+    state: latest
+    update_cache: true
+
+- name: configre / Install tar package
+  ansible.builtin.dnf:
+    name: tar
+    state: latest
