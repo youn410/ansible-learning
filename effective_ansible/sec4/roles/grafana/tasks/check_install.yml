@@ -1,0 +1,7 @@
+---
+- name: configure / Add Grafana port
+  ansible.posix.firewalld:
+    port: "{{ grafana_port }}/tcp"
+    permanent: true
+    state: enabled
+    immediate: true

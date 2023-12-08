@@ -1,0 +1,6 @@
+---
+- name: download / Download Grafana file
+  ansible.builtin.dnf:
+    name: https://dl.grafana.com/enterprise/release/grafana-enterprise-{{ grafana_version }}-1.x86_64.rpm
+    state: present
+    disable_gpg_check: true
