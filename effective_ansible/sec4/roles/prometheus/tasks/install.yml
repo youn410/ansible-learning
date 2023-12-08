@@ -8,7 +8,7 @@
     remote_src: true
 
 - name: configure / Make directory /var/lib/prometheus
-  ansible.builin.file:
+  ansible.builtin.file:
     path: /var/lib/prometheus
     state: directory
     owner: "{{ prometheus_os_user }}"
