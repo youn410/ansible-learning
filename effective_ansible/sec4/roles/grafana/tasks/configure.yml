@@ -28,6 +28,7 @@
     grafana_url: "http://{{ hostvars['grafana_server'].ansible_host }}:{{ grafana_port }}"
     grafana_user: "{{ grafana_user }}"
     grafana_password: "{{ grafana_password }}"
+    folder: "General"
     state: present
     overwrite: true
     path: grafana_dashboard.json
