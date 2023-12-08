@@ -1,7 +1,7 @@
 ---
 - name: download / Download Prometheus file
   ansible.builtin.unarchive:
-    src: https://github.com/prometheus/prometheus/releases/download/{{ prometheus_version }}/prometheus-{{ prometheus_version }}.linux-amd64.tar.gz
+    src: https://github.com/prometheus/prometheus/releases/download/v{{ prometheus_version }}/prometheus-{{ prometheus_version }}.linux-amd64.tar.gz
     dest: /usr/local/src
     owner: "{{ prometheus_os_user }}"
     group: "{{ prometheus_os_group }}"
