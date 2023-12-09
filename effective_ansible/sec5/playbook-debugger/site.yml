@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  debugger: on_failed
+  vars:
+    pkg_name: debug_test
+  tasks:
+    - name: Wrong variable
+      ansible.builtin.dnf:
+        name: "{{ pkg_name }}"
