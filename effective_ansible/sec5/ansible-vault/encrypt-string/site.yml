@@ -8,6 +8,6 @@
       ansible.builtin.include_vars:
         file: developers.yml
         name: developers
-    - name: show developers:
+    - name: show developers
       ansible.builtin.debug:
         msg: "{{ developers }}"
