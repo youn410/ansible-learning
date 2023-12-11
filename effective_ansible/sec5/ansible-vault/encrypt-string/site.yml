@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: true
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Load developers file
+      ansible.builtin.include_vars:
+        file: developers.yml
+        name: developers
+    - name: show developers:
+      ansible.builtin.debug:
+        msg: "{{ developers }}"
