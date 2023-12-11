@@ -1,0 +1,6 @@
+---
+items:
+  - name: hoge
+    group: fire
+  - name: fuga
+    group: water

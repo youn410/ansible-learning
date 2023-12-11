@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  become: true
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Load encrypted file A
+      ansible.builtin.include_vars:
+        file: encrypted-a.yml
+        name: encrypted_a
+    - name: Load encrypted file B
+      ansible.builtin.include_vars:
+        file: encrypted-b.yml
+        name: encrypted_b
+    - name: show encrypted a
+      ansible.builtin.debug:
+        msg: "{{ encrypted_a }}"
+    - name: show encrypted b
+      ansible.builtin.debug:
+        msg: "{{ encrypted_b }}"

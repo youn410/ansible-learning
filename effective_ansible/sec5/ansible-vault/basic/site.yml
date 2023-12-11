@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  become: true
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Load not encrypted file
+      ansible.builtin.include_vars:
+        file: not_encrypted.yml
+        name: not_encrypted
+    - name: Load encrypted file
+      ansible.builtin.include_vars:
+        file: encrypted.yml
+        name: encrypted
+    - name: show not encrypted
+      ansible.builtin.debug:
+        msg: "{{ not_encrypted }}"
+    - name: show not encrypted
+      ansible.builtin.debug:
+        msg: "{{ encrypted }}"
